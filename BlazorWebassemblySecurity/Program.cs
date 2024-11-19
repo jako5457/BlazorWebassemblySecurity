@@ -26,6 +26,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.MapIdentityApi<IdentityUser>(); // Identity
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
