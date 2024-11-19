@@ -1,0 +1,76 @@
+﻿@page "/Login"
+@inject HttpClient _httpClient
+@inject NavigationManager _nav
+
+@if (!string.IsNullOrEmpty(ErrorMsg))
+{
+    <div class="alert alert-danger">@ErrorMsg</div>
+}
+
+<div class="card">
+    <div class="card-header">
+        Login
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" @bind="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" @bind="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary" @onclick="LoginAsync">Login</button>
+        <button type="submit" class="btn btn-primary" @onclick="RegisterAsync">Register</button>
+    </div>
+</div>
+
+@code {
+
+    private string email = string.Empty;
+    private string password = string.Empty;
+
+    private string ErrorMsg = string.Empty;
+
+    public async Task LoginAsync()
+    {
+        var result = await _httpClient.PostAsJsonAsync("login?useCookies=true", new
+        {
+            email,
+            password
+        });
+
+        if (result.IsSuccessStatusCode)
+        {
+            _nav.NavigateTo("/");
+        }
+        else
+        {
+            email = string.Empty;
+            password = string.Empty;
+            ErrorMsg = "Wrong email or password";
+            StateHasChanged();
+        }
+    }
+
+    public async Task RegisterAsync()
+    {
+        var result = await _httpClient.PostAsJsonAsync("register", new
+        {
+            email,
+            password
+        });
+
+        if (result.IsSuccessStatusCode)
+        {
+            _nav.NavigateTo("/");
+        }
+        else
+        {
+            email = string.Empty;
+            password = string.Empty;
+            ErrorMsg = "Failed to Register";
+            StateHasChanged();
+        }
+    }
+}

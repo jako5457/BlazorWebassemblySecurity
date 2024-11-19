@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebassemblySecurity", "BlazorWebassemblySecurity\BlazorWebassemblySecurity.csproj", "{9C733586-E6A7-42BD-8986-05E3CB38B3FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApp", "WeatherApp\WeatherApp.csproj", "{3A140A5E-BF5A-44A2-8BE4-2264F1860200}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9C733586-E6A7-42BD-8986-05E3CB38B3FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C733586-E6A7-42BD-8986-05E3CB38B3FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C733586-E6A7-42BD-8986-05E3CB38B3FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A140A5E-BF5A-44A2-8BE4-2264F1860200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A140A5E-BF5A-44A2-8BE4-2264F1860200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A140A5E-BF5A-44A2-8BE4-2264F1860200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A140A5E-BF5A-44A2-8BE4-2264F1860200}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
